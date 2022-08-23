@@ -244,8 +244,21 @@
             });
             return true;
         }
+        function Showalert2() {
+            var divv = document.getElementById('<%=HiddenField1.ClientID%>').value;
+            swal({
+                title: '<h1><i style="color:#f27474;font-size:80px;" class="fa fa-times-circle-o" aria-hidden="true"></i></h1>',
+                icon: 'success',
+                html: '<div class="alert alert-danger" role="alert">' + divv + '</div>',
+                showCloseButton: false,
+                showCancelButton: false,
+                focusConfirm: false
+            });
+            return true;
+        }
 
     </script>
+    
     
 </head>
 <body>
@@ -297,6 +310,8 @@
                         
                                 
                                     <asp:HiddenField ID="TextBox1"  runat="server"></asp:HiddenField>
+                        <asp:HiddenField ID="HiddenField1"  runat="server"></asp:HiddenField>
+
                             
                             
                         

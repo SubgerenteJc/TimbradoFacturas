@@ -136,7 +136,8 @@ namespace CARGAR_EXCEL
                                 //string titulo = "Error en el segmento: ";
                                 //string mensaje = "Error al generar carta porte.";
                                 string msg = "Error: No se pudo timbrar la FACTURA:" + leg;
-                                ScriptManager.RegisterStartupScript(this, GetType(), "swal", "swal('" + msg + "', 'Error al generar la factura. ', 'error');setTimeout(function(){window.location.href ='WebForm1.aspx'}, 10000)", true);
+                                HiddenField1.Value = msg;
+                                ScriptManager.RegisterStartupScript(this, GetType(), "displayalertmessage", "Showalert2();setTimeout(function(){window.location.href ='WebForm1.aspx'}, 10000)", true);
                             }
                         }
                         else
@@ -163,7 +164,8 @@ namespace CARGAR_EXCEL
 
                         
                         string msg = "Error: No se pudo timbrar la FACTURA:" + leg;
-                        ScriptManager.RegisterStartupScript(this, GetType(), "displayalertmessage", "Showalert();setTimeout(function(){window.location.href ='WebForm1.aspx'}, 10000)", true);
+                        HiddenField1.Value = msg;
+                        ScriptManager.RegisterStartupScript(this, GetType(), "displayalertmessage", "Showalert2();setTimeout(function(){window.location.href ='WebForm1.aspx'}, 10000)", true);
                         //ScriptManager.RegisterStartupScript(this, GetType(), "swal", "swal('" + msg + "', 'Error al validar el segmento.', 'error')", true);
                         //ScriptManager.RegisterStartupScript(this, GetType(), "swal", "swal('" + msg + "', 'Error al validar el segmento.', 'error');setTimeout(function(){window.location.href ='WebForm1.aspx'}, 100000)", true);
                     }
@@ -174,7 +176,8 @@ namespace CARGAR_EXCEL
                     results.Add("Error");
                     results.Add("Segmento invalido");
                     string msg = "Error: No se pudo timbrar la FACTURA:" + leg;
-                    ScriptManager.RegisterStartupScript(this, GetType(), "swal", "swal('" + msg + "', 'Segmento invalido.', 'error');setTimeout(function(){window.location.href ='WebForm1.aspx'}, 100000)", true);
+                    HiddenField1.Value = msg;
+                    ScriptManager.RegisterStartupScript(this, GetType(), "displayalertmessage", "Showalert2();setTimeout(function(){window.location.href ='WebForm1.aspx'}, 10000)", true);
                 }
             }
             else { results.Add("Error3"); }
@@ -252,7 +255,7 @@ namespace CARGAR_EXCEL
                     TextBox1.Value = response.Content.ToString();
                     ScriptManager.RegisterStartupScript(this, GetType(), "displayalertmessage", "Showalert();setTimeout(function(){window.location.href ='WebForm1.aspx'}, 10000)", true);
                     //DataTable updateLeg = facLabControler.UpdateLeg(leg, tipom);
-                    facLabControler.enviarNotificacion(leg, titulo, merror);
+                    //facLabControler.enviarNotificacion(leg, titulo, merror);
                     return false;
                 }
                 string[] separadaFactura = response.Content.ToString().Split(',');
