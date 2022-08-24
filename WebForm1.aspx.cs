@@ -137,7 +137,7 @@ namespace CARGAR_EXCEL
                                 //string mensaje = "Error al generar carta porte.";
                                 string msg = "Error: No se pudo timbrar la FACTURA:" + leg;
                                 HiddenField1.Value = msg;
-                                ScriptManager.RegisterStartupScript(this, GetType(), "displayalertmessage", "Showalert2();setTimeout(function(){window.location.href ='WebForm1.aspx'}, 10000)", true);
+                                ScriptManager.RegisterStartupScript(this, GetType(), "displayalertmessage", "Showalert2()", true);
                             }
                         }
                         else
@@ -150,8 +150,8 @@ namespace CARGAR_EXCEL
 
                             TextBox1.Value = validaCFDI[0];
 
-                            string msg = "Error: No se pudo timbrar la FACTURA:" + leg;
-                            ScriptManager.RegisterStartupScript(this, GetType(), "displayalertmessage", "Showalert();setTimeout(function(){window.location.href ='WebForm1.aspx'}, 10000)", true);
+                            string msg = "Error: en la obtención de datos:" + leg;
+                            ScriptManager.RegisterStartupScript(this, GetType(), "displayalertmessage", "Showalert()", true);
                             //ScriptManager.RegisterStartupScript(this, GetType(), "swal", "swal('" + msg + "', 'Error en la obtención de datos', 'error')", true);
                             //ScriptManager.RegisterStartupScript(this, GetType(), "swal", "swal('" + msg + "', 'Error en la obtención de datos', 'error');setTimeout(function(){window.location.href ='WebForm1.aspx'}, 10000)", true);
                         }
@@ -163,9 +163,9 @@ namespace CARGAR_EXCEL
                         results.Add("Error al validar el segmento.");//mostrar 
 
                         
-                        string msg = "Error: No se pudo timbrar la FACTURA:" + leg;
+                        string msg = "Error: al validar el segmento" + leg;
                         HiddenField1.Value = msg;
-                        ScriptManager.RegisterStartupScript(this, GetType(), "displayalertmessage", "Showalert2();setTimeout(function(){window.location.href ='WebForm1.aspx'}, 10000)", true);
+                        ScriptManager.RegisterStartupScript(this, GetType(), "displayalertmessage", "Showalert2()", true);
                         //ScriptManager.RegisterStartupScript(this, GetType(), "swal", "swal('" + msg + "', 'Error al validar el segmento.', 'error')", true);
                         //ScriptManager.RegisterStartupScript(this, GetType(), "swal", "swal('" + msg + "', 'Error al validar el segmento.', 'error');setTimeout(function(){window.location.href ='WebForm1.aspx'}, 100000)", true);
                     }
@@ -175,9 +175,9 @@ namespace CARGAR_EXCEL
                     results.Clear();
                     results.Add("Error");
                     results.Add("Segmento invalido");
-                    string msg = "Error: No se pudo timbrar la FACTURA:" + leg;
+                    string msg = "Error: Segmento invalido:" + leg;
                     HiddenField1.Value = msg;
-                    ScriptManager.RegisterStartupScript(this, GetType(), "displayalertmessage", "Showalert2();setTimeout(function(){window.location.href ='WebForm1.aspx'}, 10000)", true);
+                    ScriptManager.RegisterStartupScript(this, GetType(), "displayalertmessage", "Showalert2()", true);
                 }
             }
             else { results.Add("Error3"); }
@@ -253,7 +253,7 @@ namespace CARGAR_EXCEL
                     //string mensaje = "Error al validar el segmento.";
                     string merror = response.Content.ToString();
                     TextBox1.Value = response.Content.ToString();
-                    ScriptManager.RegisterStartupScript(this, GetType(), "displayalertmessage", "Showalert();setTimeout(function(){window.location.href ='WebForm1.aspx'}, 10000)", true);
+                    ScriptManager.RegisterStartupScript(this, GetType(), "displayalertmessage", "Showalert()", true);
                     //DataTable updateLeg = facLabControler.UpdateLeg(leg, tipom);
                     //facLabControler.enviarNotificacion(leg, titulo, merror);
                     return false;
